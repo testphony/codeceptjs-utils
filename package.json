@@ -1,14 +1,14 @@
 {
   "name": "@kronoslive/codeceptjs-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Special utils for codeceptjs helpers",
   "dependencies": {
     "cuid": "^2.1.1"
   },
   "devDependencies": {
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.12.0"
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
   },
   "main": "index.js",
   "scripts": {

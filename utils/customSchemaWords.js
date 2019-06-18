@@ -39,8 +39,8 @@ module.exports = {
               expected.sort((a, b) => a - b);
             }
           }
-          return (expected.length === sorted.length) &&
-            sorted.every((element, index) => element === expected[index]);
+          return (expected.length === sorted.length)
+            && sorted.every((element, index) => element === expected[index]);
         });
       }
       validate.errors = [{
