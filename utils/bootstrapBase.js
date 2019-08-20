@@ -3,7 +3,7 @@
  */
 const Timer = require('./Timer');
 
-module.exports = async (func, onError, delay = 5000, timeout = 120000) => {
+module.exports = async (func, onError, delay = 5000, timeout = 10000) => {
   const bootstrapFn = async (done) => {
     console.info('We are waiting, when environment will be ready');
     const fn = async () => {
@@ -22,7 +22,8 @@ module.exports = async (func, onError, delay = 5000, timeout = 120000) => {
     return timer
       .then(() => done())
       .catch((e) => {
-        done(e);
+        console.info(`Environment was not be able to start during ${timeout} ms. Exit.`)
+        process.exitCode = 1
       });
   };
 

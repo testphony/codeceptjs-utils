@@ -1,6 +1,6 @@
 {
   "name": "@kronoslive/codeceptjs-utils",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Special utils for codeceptjs helpers",
   "dependencies": {
     "cuid": "^2.1.1"
