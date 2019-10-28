@@ -3,7 +3,7 @@
  */
 const Timer = require('./Timer');
 
-module.exports = async (func, onError, delay = 5000, timeout = 10000) => {
+module.exports = async ({ func, onError, delay = 5000, timeout = 30000 } = {}) => {
   const bootstrapFn = async (done) => {
     console.info('We are waiting, when environment will be ready');
     const fn = async () => {
