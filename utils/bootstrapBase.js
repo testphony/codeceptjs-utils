@@ -22,8 +22,13 @@ module.exports = async ({ func, onError, delay = 5000, timeout = 30000 } = {}) =
     return timer
       .then(() => done())
       .catch((e) => {
-        console.info(`Environment was not be able to start during ${timeout} ms. Exit.`)
-        process.exitCode = 1
+        if (e.message === 'timeout') {
+          console.info(`Environment was not be able to start during ${timeout} ms. Exit.`)
+          process.exitCode = 1;
+        } else {
+          console.error(e);
+          process.exitCode = 1;
+        }
       });
   };
 
