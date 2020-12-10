@@ -22,7 +22,7 @@ class Timer {
      * execute commands synchronously if method name is not async
      */
     if (isSync && typeof global.wdioSync === 'function' && fn.name.match(/^(bound )*async$/) === null) {
-      this._fn = () => new Promise(resolve => global.wdioSync(fn, resolve)());
+      this._fn = () => new Promise((resolve) => global.wdioSync(fn, resolve)());
     }
 
     const retPromise = new Promise((resolve, reject) => {
@@ -79,8 +79,8 @@ class Timer {
     }
 
     return result.then(
-      res => this.checkCondition(null, res),
-      err => this.checkCondition(err),
+      (res) => this.checkCondition(null, res),
+      (err) => this.checkCondition(err),
     );
   }
 
